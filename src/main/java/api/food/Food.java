@@ -19,9 +19,8 @@ public class Food {
 	private boolean tasty;
 	@Column(name="healthy")
 	private boolean healthy;
-	@ManyToOne
 	@Column(name="food_group")
-	private String foodGroupName;
+	private String foodGroupId;
 	
 	public Food() {
 		super();
@@ -34,7 +33,7 @@ public class Food {
 		this.name = name;
 		this.tasty = tasty;
 		this.healthy = healthy;
-		this.foodGroupName = foodGroupName;
+		this.foodGroupId = foodGroupName;
 	}
 
 	public String getId() {
@@ -70,11 +69,11 @@ public class Food {
 	}
 	
 	public String getFoodGroup() {
-		return foodGroupName;
+		return foodGroupId;
 	}
 	
 	public void setFoodGroup(String foodGroup) {
-		this.foodGroupName = foodGroup;
+		this.foodGroupId = foodGroup;
 	}
 	
 }
