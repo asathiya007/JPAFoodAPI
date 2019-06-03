@@ -3,6 +3,7 @@ package api.foodgroup;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,5 +37,10 @@ public class FoodGroupResource {
 	@PutMapping("/{fgId}")
 	public void updateFoodGroup(@RequestBody FoodGroup fg) {
 		fgRepo.save(fg);
+	}
+	
+	@DeleteMapping("/{fgId}")
+	public void deleteFoodGroup(@PathVariable String fgId) {
+		fgRepo.deleteById(fgId);
 	}
 }
